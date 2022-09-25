@@ -2,27 +2,36 @@ import fs from 'fs';
 import fse from 'fs-extra';
 import path from 'path';
 
-export class Voide {
-  input: string;
-  output: string;
-  force: boolean;
+import { DefaultApi } from './openapi';
 
-  constructor(input: string, output: string, force: boolean) {
-    this.input = input;
-    this.output = output;
-    this.force = force;
+const basePath = 'http://localhost:50021';
+const api = new DefaultApi(undefined, basePath);
+
+export class Voide {
+  async speakers() {
+    const { data: speakers } = await api.speakersSpeakersGet();
+    return speakers;
   }
 
-  generate() {
-    const markdown = fs.readFileSync(this.input, 'utf8');
+  async generate(
+    input: string,
+    output: string,
+    speaker: number,
+    force: boolean
+  ) {
+    const markdown = fs.readFileSync(input, 'utf8');
 
-    if (this.force) {
-      fs.rmSync(this.output, { recursive: true, force: true });
+    this.createOutputDirectory(output, force);
+  }
+
+  createOutputDirectory(output: string, force: boolean) {
+    if (force) {
+      fs.rmSync(output, { recursive: true, force: true });
     }
 
-    fs.mkdirSync(this.output);
+    fs.mkdirSync(output);
 
     const templatesPath = path.join(__dirname, '../lib/templates');
-    fse.copySync(templatesPath, this.output);
+    fse.copySync(templatesPath, output);
   }
 }

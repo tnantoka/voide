@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "bin": "dist/bin/index.js",
   "scripts": {
+    "openapi": "rm -rf src/openapi && openapi-generator-cli generate -g typescript-axios -o src/openapi -i http://localhost:50021/openapi.json",
     "format": "prettier --write --single-quote src",
-    "hello": "ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -f",
+    "hello": "ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -s 0 -f",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/tnantoka/voide#readme",
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.5.2",
     "@types/fs-extra": "^9.0.13",
     "@types/yargs": "^17.0.13",
     "prettier": "^2.7.1",
@@ -27,6 +29,7 @@
     "typescript": "^4.8.3"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "fs-extra": "^10.1.0",
     "yargs": "^17.5.1"
   }
