@@ -7,22 +7,6 @@ import { Voide } from '..';
 (async () => {
   const voide = new Voide();
 
-  const speakers = await voide.speakers();
-  const styles = speakers
-    .reduce(
-      (prev, current) => [
-        ...prev,
-        ...current.styles.map((style) => ({
-          id: style.id,
-          name: `${current.name} (${style.name})`,
-        })),
-      ],
-      [] as { id: number; name: string }[]
-    )
-    .sort((a, b) => a.id - b.id)
-    .map((style) => `${style.id}: ${style.name}`)
-    .join('\n');
-
   const argv = yargs(process.argv.slice(2))
     .options({
       input: {
@@ -41,15 +25,12 @@ import { Voide } from '..';
         type: 'number',
         demandOption: true,
         alias: 's',
-        description: styles,
-      },
-      force: {
-        type: 'boolean',
-        alias: 'f',
-        default: false,
+        description: (await voide.speakerOptions())
+          .map((style) => style.label)
+          .join('\n'),
       },
     })
     .parseSync();
 
-  voide.generate(argv.input, argv.output, argv.speaker, argv.force);
+  voide.generate(argv.input, argv.output, argv.speaker);
 })();

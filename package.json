@@ -7,7 +7,7 @@
   "scripts": {
     "openapi": "rm -rf src/openapi && openapi-generator-cli generate -g typescript-axios -o src/openapi -i http://localhost:50021/openapi.json",
     "format": "prettier --write --single-quote src",
-    "hello": "ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -s 0 -f",
+    "hello": "rm -rf tmp/hello && ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -s 0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "typescript": "^4.8.3"
   },
   "dependencies": {
+    "@marp-team/marpit": "^2.4.1",
     "axios": "^0.27.2",
     "fs-extra": "^10.1.0",
     "yargs": "^17.5.1"
