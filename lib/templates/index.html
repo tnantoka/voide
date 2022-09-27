@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="h-100">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Voide</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body class="h-100">
+    <div class="h-100 d-flex flex-column">
+      <div class="flex-fill slide-container"></div>
+      <div class="bg-dark d-flex align-items-center">
+        <div class="flex-fill text-white px-3 caption-container"></div>
+        <div>
+          <button class="btn btn-lg btn-dark caption-button">
+            <i class="bi-badge-cc-fill active"></i>
+            <i class="bi-badge-cc inactive d-none"></i>
+          </button>
+          <button class="btn btn-lg btn-dark mute-button">
+            <i class="bi-volume-mute-fill active"></i>
+            <i class="bi-volume-up-fill inactive d-none"></i>
+          </button>
+          <button class="btn btn-lg btn-dark autoplay-button">
+            <i class="bi-pause-fill active"></i>
+            <i class="bi-play-fill inactive d-none"></i>
+          </button>
+          <button class="btn btn-lg btn-dark back-button">
+            <i class="bi-chevron-left"></i>
+          </button>
+          <button class="btn btn-lg btn-dark next-button">
+            <i class="bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="voide.js"></script>
+  </body>
+</html>

@@ -6,7 +6,7 @@
   "bin": "dist/bin/index.js",
   "scripts": {
     "openapi": "rm -rf src/openapi && openapi-generator-cli generate -g typescript-axios -o src/openapi -i http://localhost:50021/openapi.json",
-    "format": "prettier --write --single-quote src",
+    "format": "prettier --write --single-quote src lib",
     "hello": "rm -rf tmp/hello && ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -s 0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
