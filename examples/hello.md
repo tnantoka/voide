@@ -1,4 +1,6 @@
 ---
+theme: gaia
+class: invert
 ---
 
 # Slide 1

@@ -21,6 +21,11 @@ import { Voide } from '..';
         alias: 'o',
         description: 'path/to/output.d/',
       },
+      title: {
+        type: 'string',
+        demandOption: true,
+        alias: 't',
+      },
       speaker: {
         type: 'number',
         demandOption: true,
@@ -32,5 +37,5 @@ import { Voide } from '..';
     })
     .parseSync();
 
-  voide.generate(argv.input, argv.output, argv.speaker);
+  voide.generate(argv.input, argv.output, argv.title, argv.speaker);
 })();

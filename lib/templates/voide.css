@@ -1,0 +1,12 @@
+.marpit {
+  display: none;
+}
+
+.slide-container.marpit {
+  display: block;
+}
+
+.slide-container.marpit > section {
+  width: auto;
+  height: auto;
+}

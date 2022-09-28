@@ -1,13 +1,13 @@
 {
   "name": "voide",
   "version": "1.0.0",
-  "description": "Generate HTML presentations from markdown with Marpit and VOICEVOX",
+  "description": "Generate HTML presentations from markdown with Marp and VOICEVOX",
   "main": "dist/index.js",
   "bin": "dist/bin/index.js",
   "scripts": {
     "openapi": "rm -rf src/openapi && openapi-generator-cli generate -g typescript-axios -o src/openapi -i http://localhost:50021/openapi.json",
     "format": "prettier --write --single-quote src lib",
-    "hello": "rm -rf tmp/hello && ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -s 0",
+    "hello": "rm -rf tmp/hello && ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -t Hello -s 0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/tnantoka/voide#readme",
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.2",
+    "@types/ejs": "^3.1.1",
     "@types/fs-extra": "^9.0.13",
     "@types/yargs": "^17.0.13",
     "prettier": "^2.7.1",
@@ -29,8 +30,9 @@
     "typescript": "^4.8.3"
   },
   "dependencies": {
-    "@marp-team/marpit": "^2.4.1",
+    "@marp-team/marp-core": "^3.3.3",
     "axios": "^0.27.2",
+    "ejs": "^3.1.8",
     "fs-extra": "^10.1.0",
     "yargs": "^17.5.1"
   }

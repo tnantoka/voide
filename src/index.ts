@@ -21,11 +21,16 @@ export class Voide {
     return options.sort((a, b) => a.id - b.id);
   }
 
-  async generate(input: string, output: string, speaker: number) {
+  async generate(
+    input: string,
+    output: string,
+    title: string,
+    speaker: number
+  ) {
     const options = await this.speakerOptions();
     const option = options.find((o) => o.id === speaker)!;
 
-    new Renderer(input, output, option).render();
+    new Renderer(input, output, title, option).render();
   }
 
   async copyright(uuid: string) {
