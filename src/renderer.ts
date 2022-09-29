@@ -8,7 +8,7 @@ import { ResponseType } from 'axios';
 import { SpeakerOption } from './types';
 import { apiClient } from './api_client';
 
-const marp = new Marp({ inlineSVG: false });
+const marp = new Marp({ inlineSVG: false, script: false });
 
 export class Renderer {
   input: string;
@@ -30,19 +30,15 @@ export class Renderer {
 
   async render() {
     const markdown = fs.readFileSync(this.input, 'utf8');
-    const rendered = marp.render(markdown);
+    const { html, css, comments } = marp.render(markdown, {
+      htmlAsArray: true,
+    });
 
-    this.generateHTML(rendered.html);
-    this.generateVoices(rendered.comments);
-
-    fs.writeFileSync(
-      path.join(this.output, 'rendered.json'),
-      JSON.stringify(rendered, null, 2),
-      'utf8'
-    );
+    this.generateHTML(html, css, comments);
+    this.generateVoices(comments);
   }
 
-  async generateHTML(html: string) {
+  async generateHTML(html: string[], css: string, comments: string[][]) {
     fs.mkdirSync(this.output);
 
     const templatesPath = path.join(__dirname, '../lib/templates');
@@ -55,7 +51,7 @@ export class Renderer {
     const template = ejs.compile(fs.readFileSync(ejsPath, 'utf8'));
     fs.writeFileSync(
       htmlPath,
-      template({ title: this.title, copyright }),
+      template({ title: this.title, copyright, html, css, comments }),
       'utf8'
     );
     fs.rmSync(ejsPath);
@@ -96,6 +92,8 @@ export class Renderer {
           path.join(voicesPath, `${index}.wav`),
           Buffer.from(wav)
         );
+
+        process.stdout.write('*');
       })
     );
   }
