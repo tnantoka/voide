@@ -10,7 +10,7 @@
     "typecheck": "tsc src/**/*.ts --noEmit",
     "openapi": "rm -rf src/openapi && openapi-generator-cli generate -g typescript-axios -o src/openapi -i http://localhost:50021/openapi.json",
     "format": "prettier --write --single-quote src lib",
-    "hello": "rm -rf tmp/hello && ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -t Hello -s 0",
+    "hello": "rm -rf tmp/hello && ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -s 0 -t Hello -d World",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

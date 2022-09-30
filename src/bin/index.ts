@@ -21,11 +21,6 @@ import { Voide } from '..';
         alias: 'o',
         description: 'path/to/output.d/',
       },
-      title: {
-        type: 'string',
-        demandOption: true,
-        alias: 't',
-      },
       speaker: {
         type: 'number',
         demandOption: true,
@@ -34,8 +29,23 @@ import { Voide } from '..';
           .map((style) => style.label)
           .join('\n'),
       },
+      title: {
+        type: 'string',
+        demandOption: true,
+        alias: 't',
+      },
+      description: {
+        type: 'string',
+        alias: 'd',
+      },
     })
     .parseSync();
 
-  voide.generate(argv.input, argv.output, argv.title, argv.speaker);
+  voide.generate(
+    argv.input,
+    argv.output,
+    argv.speaker,
+    argv.title,
+    argv.description ?? ''
+  );
 })();

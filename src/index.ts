@@ -24,13 +24,14 @@ export class Voide {
   async generate(
     input: string,
     output: string,
+    speaker: number,
     title: string,
-    speaker: number
+    description: string
   ) {
     const options = await this.speakerOptions();
     const option = options.find((o) => o.id === speaker)!;
 
-    new Renderer(input, output, title, option).render();
+    new Renderer(input, output, option, title, description).render();
   }
 
   async copyright(uuid: string) {

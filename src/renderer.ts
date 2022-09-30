@@ -13,19 +13,22 @@ const marp = new Marp({ inlineSVG: false, script: false });
 export class Renderer {
   input: string;
   output: string;
-  title: string;
   speakerOption: SpeakerOption;
+  title: string;
+  description: string;
 
   constructor(
     input: string,
     output: string,
+    speakerOption: SpeakerOption,
     title: string,
-    speakerOption: SpeakerOption
+    description: string
   ) {
     this.input = input;
     this.output = output;
-    this.title = title;
     this.speakerOption = speakerOption;
+    this.title = title;
+    this.description = description;
   }
 
   async render() {
@@ -51,7 +54,14 @@ export class Renderer {
     const template = ejs.compile(fs.readFileSync(ejsPath, 'utf8'));
     fs.writeFileSync(
       htmlPath,
-      template({ title: this.title, copyright, html, css, comments }),
+      template({
+        title: this.title,
+        description: this.description,
+        copyright,
+        html,
+        css,
+        comments,
+      }),
       'utf8'
     );
     fs.rmSync(ejsPath);
