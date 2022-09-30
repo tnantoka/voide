@@ -1,7 +1,7 @@
-import fs from 'fs';
-import fse from 'fs-extra';
-import path from 'path';
-import ejs from 'ejs';
+import * as fs from 'fs';
+import * as fse from 'fs-extra';
+import * as path from 'path';
+import * as ejs from 'ejs';
 import { Marp } from '@marp-team/marp-core';
 import { ResponseType } from 'axios';
 

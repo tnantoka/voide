@@ -4,7 +4,10 @@
   "description": "Generate HTML presentations from markdown with Marp and VOICEVOX",
   "main": "dist/index.js",
   "bin": "dist/bin/index.js",
+  "files": ["lib", "dist"],
   "scripts": {
+    "build": "tsc src/**/*.ts --outDir dist",
+    "typecheck": "tsc src/**/*.ts --noEmit",
     "openapi": "rm -rf src/openapi && openapi-generator-cli generate -g typescript-axios -o src/openapi -i http://localhost:50021/openapi.json",
     "format": "prettier --write --single-quote src lib",
     "hello": "rm -rf tmp/hello && ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -t Hello -s 0",
