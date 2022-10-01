@@ -38,6 +38,11 @@ import { Voide } from '..';
         type: 'string',
         alias: 'd',
       },
+      wait: {
+        type: 'array',
+        alias: 'w',
+        description: 'page:seconds',
+      },
     })
     .parseSync();
 
@@ -46,6 +51,10 @@ import { Voide } from '..';
     argv.output,
     argv.speaker,
     argv.title,
-    argv.description ?? ''
+    argv.description ?? '',
+    (argv.wait ?? []).map((w: string | number) => ({
+      page: parseInt(w.toString().split(':')[0]),
+      seconds: parseInt(w.toString().split(':')[1]),
+    }))
   );
 })();

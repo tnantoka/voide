@@ -4,3 +4,8 @@ export type SpeakerOption = {
   label: string;
   copyright: string;
 };
+
+export type WaitOption = {
+  page: number;
+  seconds: number;
+};

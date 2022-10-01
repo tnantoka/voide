@@ -5,7 +5,7 @@ import * as ejs from 'ejs';
 import { Marp } from '@marp-team/marp-core';
 import { ResponseType } from 'axios';
 
-import { SpeakerOption } from './types';
+import { SpeakerOption, WaitOption } from './types';
 import { apiClient } from './api_client';
 
 const marp = new Marp({ inlineSVG: false, script: false });
@@ -16,19 +16,22 @@ export class Renderer {
   speakerOption: SpeakerOption;
   title: string;
   description: string;
+  wait: WaitOption[];
 
   constructor(
     input: string,
     output: string,
     speakerOption: SpeakerOption,
     title: string,
-    description: string
+    description: string,
+    wait: WaitOption[]
   ) {
     this.input = input;
     this.output = output;
     this.speakerOption = speakerOption;
     this.title = title;
     this.description = description;
+    this.wait = wait;
   }
 
   async render() {
@@ -78,10 +81,17 @@ export class Renderer {
       comments.map(async (comment, i) => {
         const index = i + 1;
         const text = comment.join();
-        const { data: query } = await apiClient.audioQueryAudioQueryPost(
+        const { data } = await apiClient.audioQueryAudioQueryPost(
           text,
           this.speakerOption.id
         );
+        const postPhonemeLength =
+          (this.wait.find((w) => w.page === index)?.seconds ?? 0) +
+          data.postPhonemeLength;
+        const query = {
+          ...data,
+          postPhonemeLength,
+        };
         fs.writeFileSync(
           path.join(queriesPath, `${index}.json`),
           JSON.stringify(query, null, 2)

@@ -1,4 +1,4 @@
-import { SpeakerOption } from './types';
+import { SpeakerOption, WaitOption } from './types';
 import { Renderer } from './renderer';
 import { apiClient } from './api_client';
 
@@ -26,12 +26,13 @@ export class Voide {
     output: string,
     speaker: number,
     title: string,
-    description: string
+    description: string,
+    wait: WaitOption[]
   ) {
     const options = await this.speakerOptions();
     const option = options.find((o) => o.id === speaker)!;
 
-    new Renderer(input, output, option, title, description).render();
+    new Renderer(input, output, option, title, description, wait).render();
   }
 
   async copyright(uuid: string) {
