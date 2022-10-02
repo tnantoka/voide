@@ -10,7 +10,8 @@
     "typecheck": "tsc src/**/*.ts --noEmit",
     "openapi": "rm -rf src/openapi && openapi-generator-cli generate -g typescript-axios -o src/openapi -i http://localhost:50021/openapi.json",
     "format": "prettier --write --single-quote src lib",
-    "hello": "rm -rf tmp/hello && ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -s 0 -t Hello -d World",
+    "hello": "rm -rf tmp/hello && ts-node src/bin/index.ts -i examples/hello.md -o tmp/hello -s 0 -t Hello -d World -w 1:2 -w 2:4",
+    "docs": "rm -rf docs && ts-node src/bin/index.ts -i examples/docs.md -o docs -s 0 -t Voide -d '\"Kawaii\" Slide Generator' -w 1:1 2:1 3:1 4:2 5:2 6:2 7:2 8:2 9:2 10:1 11:1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

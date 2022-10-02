@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Voide</title>
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+/>
+
+<style>
+@charset "UTF-8";@import "https://fonts.bunny.net/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap";div.marpit>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div.marpit>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div.marpit>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div.marpit>section :is(h1,marp-h1){font-size:2em;margin:0.67em 0}div.marpit>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div.marpit>section{page-break-before:always;break-before:page}div.marpit>section,div.marpit>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div.marpit>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div.marpit>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+/*!
+ * Marp / Marpit Gaia theme.
+ *
+ * @theme gaia
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */div.marpit>section :is(pre,marp-pre) code.hljs{display:block;overflow-x:auto;padding:1em}div.marpit>section code.hljs{padding:3px 5px}div.marpit>section .hljs{background:#000;color:#f8f8f8}div.marpit>section .hljs-comment,div.marpit>section .hljs-quote{color:#aeaeae;font-style:italic}div.marpit>section .hljs-keyword,div.marpit>section .hljs-selector-tag,div.marpit>section .hljs-type{color:#e28964}div.marpit>section .hljs-string{color:#65b042}div.marpit>section .hljs-subst{color:#daefa3}div.marpit>section .hljs-link,div.marpit>section .hljs-regexp{color:#e9c062}div.marpit>section .hljs-name,div.marpit>section .hljs-section,div.marpit>section .hljs-tag,div.marpit>section .hljs-title{color:#89bdff}div.marpit>section .hljs-class .hljs-title,div.marpit>section .hljs-doctag,div.marpit>section .hljs-title.class_{text-decoration:underline}div.marpit>section .hljs-bullet,div.marpit>section .hljs-number,div.marpit>section .hljs-symbol{color:#3387cc}div.marpit>section .hljs-params,div.marpit>section .hljs-template-variable,div.marpit>section .hljs-variable{color:#3e87e3}div.marpit>section .hljs-attribute{color:#cda869}div.marpit>section .hljs-meta{color:#8996a8}div.marpit>section .hljs-formula{background-color:#0e2231;color:#f8f8f8;font-style:italic}div.marpit>section .hljs-addition{background-color:#253b22;color:#f8f8f8}div.marpit>section .hljs-deletion{background-color:#420e09;color:#f8f8f8}div.marpit>section .hljs-selector-class{color:#9b703f}div.marpit>section .hljs-selector-id{color:#8b98ab}div.marpit>section .hljs-emphasis{font-style:italic}div.marpit>section .hljs-strong{font-weight:700}div.marpit>section :is(h1,marp-h1),div.marpit>section :is(h2,marp-h2),div.marpit>section :is(h3,marp-h3),div.marpit>section :is(h4,marp-h4),div.marpit>section :is(h5,marp-h5),div.marpit>section :is(h6,marp-h6){margin:.5em 0 0}div.marpit>section :is(h1,marp-h1) strong,div.marpit>section :is(h2,marp-h2) strong,div.marpit>section :is(h3,marp-h3) strong,div.marpit>section :is(h4,marp-h4) strong,div.marpit>section :is(h5,marp-h5) strong,div.marpit>section :is(h6,marp-h6) strong{font-weight:inherit}div.marpit>section :is(h1,marp-h1)::part(auto-scaling),div.marpit>section :is(h2,marp-h2)::part(auto-scaling),div.marpit>section :is(h3,marp-h3)::part(auto-scaling),div.marpit>section :is(h4,marp-h4)::part(auto-scaling),div.marpit>section :is(h5,marp-h5)::part(auto-scaling),div.marpit>section :is(h6,marp-h6)::part(auto-scaling){max-height:580px}div.marpit>section :is(h1,marp-h1){font-size:1.8em}div.marpit>section :is(h2,marp-h2){font-size:1.5em}div.marpit>section :is(h3,marp-h3){font-size:1.3em}div.marpit>section :is(h4,marp-h4){font-size:1.1em}div.marpit>section :is(h5,marp-h5){font-size:1em}div.marpit>section :is(h6,marp-h6){font-size:.9em}div.marpit>section blockquote,div.marpit>section p{margin:1em 0 0}div.marpit>section ol>li,div.marpit>section ul>li{margin:.3em 0 0}div.marpit>section ol>li>p,div.marpit>section ul>li>p{margin:.6em 0 0}div.marpit>section code{display:inline-block;font-family:Roboto Mono,monospace;font-size:.8em;letter-spacing:0;margin:-.1em .15em;padding:.1em .2em;vertical-align:baseline}div.marpit>section :is(pre,marp-pre){display:block;margin:1em 0 0;overflow:visible}div.marpit>section :is(pre,marp-pre) code{box-sizing:border-box;font-size:.7em;margin:0;min-width:100%;padding:.5em}div.marpit>section :is(pre,marp-pre)::part(auto-scaling){max-height:calc(580px - 1em)}div.marpit>section blockquote{margin:1em 0 0;padding:0 1em;position:relative}div.marpit>section blockquote:after,div.marpit>section blockquote:before{content:"“";display:block;font-family:Times New Roman,serif;font-weight:700;position:absolute}div.marpit>section blockquote:before{left:0;top:0}div.marpit>section blockquote:after{bottom:0;right:0;transform:rotate(180deg)}div.marpit>section blockquote>:first-child{margin-top:0}div.marpit>section mark{background:transparent}div.marpit>section table{border-collapse:collapse;border-spacing:0;margin:1em 0 0}div.marpit>section table td,div.marpit>section table th{border-style:solid;border-width:1px;padding:.2em .4em}div.marpit>section footer,div.marpit>section header,div.marpit>section:after{box-sizing:border-box;font-size:66%;height:70px;line-height:50px;overflow:hidden;padding:10px 25px;position:absolute}div.marpit>section:after{--marpit-root-font-size:66%}div.marpit>section header{top:0}div.marpit>section footer,div.marpit>section header{left:0;right:0}div.marpit>section footer{bottom:0}div.marpit>section{word-wrap:break-word;--color-background:#fff8e1;--color-background-stripe:rgba(69,90,100,.1);--color-foreground:#455a64;--color-dimmed:#6a7a7d;--color-highlight:#0288d1;background-color:var(--color-background);background-image:linear-gradient(135deg,hsla(0,0%,53%,0),hsla(0,0%,53%,.02) 50%,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.05));color:var(--color-foreground);font-family:Lato,Avenir Next,Avenir,Trebuchet MS,Segoe UI,sans-serif;font-size:35px;height:720px;letter-spacing:1.25px;line-height:1.35;padding:70px;width:1280px}div.marpit>section{--marpit-root-font-size:35px}div.marpit>section:after{bottom:0;font-size:80%;right:0}div.marpit>section:after{--marpit-root-font-size:80%}div.marpit>section a,div.marpit>section mark{color:var(--color-highlight)}div.marpit>section code{background:var(--color-dimmed);color:var(--color-background)}div.marpit>section :is(h1,marp-h1) strong,div.marpit>section :is(h2,marp-h2) strong,div.marpit>section :is(h3,marp-h3) strong,div.marpit>section :is(h4,marp-h4) strong,div.marpit>section :is(h5,marp-h5) strong,div.marpit>section :is(h6,marp-h6) strong{color:var(--color-highlight)}div.marpit>section :is(pre,marp-pre){background:var(--color-foreground)}div.marpit>section :is(pre,marp-pre)>code{background:transparent}div.marpit>section blockquote:after,div.marpit>section blockquote:before,div.marpit>section footer,div.marpit>section header,div.marpit>section section:after{color:var(--color-dimmed)}div.marpit>section table td,div.marpit>section table th{border-color:var(--color-foreground)}div.marpit>section table thead th{background:var(--color-foreground);color:var(--color-background)}div.marpit>section table tbody>tr:nth-child(odd) td,div.marpit>section table tbody>tr:nth-child(odd) th{background:var(--color-background-stripe,transparent)}div.marpit>section>:first-child,div.marpit>section>header:first-child+*{margin-top:0}div.marpit>section:where(.invert){--color-background:#455a64;--color-background-stripe:rgba(255,248,225,.1);--color-foreground:#fff8e1;--color-dimmed:#dad8c8;--color-highlight:#81d4fa}div.marpit>section:where(.gaia){--color-background:#0288d1;--color-background-stripe:rgba(255,248,225,.1);--color-foreground:#fff8e1;--color-dimmed:#cce2de;--color-highlight:#81d4fa}div.marpit>section:where(.lead){display:flex;flex-flow:column nowrap;justify-content:center}div.marpit>section:where(.lead) :is(h1,marp-h1),div.marpit>section:where(.lead) :is(h2,marp-h2),div.marpit>section:where(.lead) :is(h3,marp-h3),div.marpit>section:where(.lead) :is(h4,marp-h4),div.marpit>section:where(.lead) :is(h5,marp-h5),div.marpit>section:where(.lead) :is(h6,marp-h6){text-align:center}div.marpit>section:where(.lead) p{text-align:center}div.marpit>section:where(.lead) blockquote>:is(h1,marp-h1),div.marpit>section:where(.lead) blockquote>:is(h2,marp-h2),div.marpit>section:where(.lead) blockquote>:is(h3,marp-h3),div.marpit>section:where(.lead) blockquote>:is(h4,marp-h4),div.marpit>section:where(.lead) blockquote>:is(h5,marp-h5),div.marpit>section:where(.lead) blockquote>:is(h6,marp-h6),div.marpit>section:where(.lead) blockquote>p{text-align:left}div.marpit>section:where(.lead) ol>li>p,div.marpit>section:where(.lead) ul>li>p{text-align:left}div.marpit>section:where(.lead) table{margin-left:auto;margin-right:auto}
+</style>
+
+<script>
+const props = {
+  comments: [
+    [`Generated by
+    <a href="https://github.com/tnantoka/voide" target="_blank" rel="noopener" class="text-white">Voide</a>
+    with
+    <a href="https://marp.app/" target="_blank" rel="noopener" class="text-white">Marp</a>,
+    <a href="https://voicevox.hiroshiba.jp/" target="_blank" rel="noopener" class="text-white">VOICEVOX:四国めたん</a>`],
+    ...[["まずは、これは一体なんなのかという話ですが、\nマークダウンからスライドを作って、その発表者メモをVOICEVOXに読み上げてもらうためのコマンドラインツールです。"],["次に、なんのためにこんなものを作ったのか、ということですが。\nおっさんである自分の声をあまり聞きたくないというのが一番ですね。\nあとは、撮り直しという作業がとても嫌いなので、人間がそれをやらずに音声付きのスライドが作れればいいな、というのもありました。"],["どんなものが作れるのか。\n今見ているこれがまさにボイドを使って作ったものです。\nコマンド一発、加工なしです。"],["さて、使い方です。\nこのような3つの手順で使います。"],["まずは一番大事なスライドの中身ですが、これはマープというツールに任せているので、これに従ってマークダウンを書けばOKです。\nブイエスコードの拡張やシーエルアイツールがあるので、好きな方法でどうぞ。"],["次におそらく一番面倒な手順です。\n各スライドにHTMLコメントとして、VOICEVOXに読み上げてもらう原稿を書いていきます。\nめんどいとは言え、実際にしゃべるよりはだいぶマシなのではないかと思います。"],["最後に作成したマークダウンをボイドに渡します。"],["主なオプションはこちらです。\n`-w` がわかりづらいですが、読み上げた後、スライドがすぐ切り替わってしまうのを防ぐためのものです。"],["実際にこのスライドを生成したコマンドを載せておきます。"],["完成したスライドはアウトプットディレクトリをまるごと公開すればOKです。"],["VOICEVOXのライセンスは音声ライブラリごとに異なるので、各自確認してください。\n音声作品への使用が禁止されているものなどがあるので要注意です。"],["それでは、もし興味が湧きましたらスライドを作ってみてください。\nかわいい、スライドは、作れる！です。\nありがとうございました。"]],
+  ],
+  sections: [
+    `<section id="0">
+      <h1>Voide</h1>
+      <p>&#34;Kawaii&#34; Slide Generator</p>
+    </section>`,
+    ...["<section id=\"1\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>これは何？</h1>\n<p>Markdownでスライドを作り、それを自分の代わりにVOICEVOXに発表してもらおうというツールです。</p>\n</section>\n","<section id=\"2\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>モチベーション</h1>\n<ul>\n<li>自分の声を聞きたくない</li>\n<li>「撮り直し」という非人道的な作業から人類を開放する（？）</li>\n</ul>\n</section>\n","<section id=\"3\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>どんなスライドが作れる？</h1>\n<p>今見ているこのスライドがサンプルです。</p>\n</section>\n","<section id=\"4\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>使い方</h1>\n<ol>\n<li>Markdownを準備する</li>\n<li>話す内容を書く</li>\n<li>Voideで処理する</li>\n</ol>\n</section>\n","<section id=\"5\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>使い方1: Markdownを準備する</h1>\n<p>スライドの元となるMarkdownを準備します。<br />\n内部でMarpを使っているので、Marpの記法に従います。</p>\n<p>VS Codeの拡張やコマンドラインツールがあるので、好きな方法で作成します。</p>\n<p><a href=\"https://marp.app/#get-started\">https://marp.app/#get-started</a></p>\n</section>\n","<section id=\"6\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>使い方2: 話す内容を書く</h1>\n<p>各スライドにHTMLコメントで書きます。</p>\n<pre><code>---\n\n# タイトル\n\n本文\n\n&lt;!--\nここに書きます\n--&gt;\n\n---\n</code></pre>\n</section>\n","<section id=\"7\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>使い方3: Voideで処理する</h1>\n<p>markdownファイルをVoideに渡します。<br />\n<strong>事前にVOICEVOXを起動しておく必要があります。</strong></p>\n<pre><code>$ npx voide \\\n  -i Markdownファイルのパス \\\n  -o 出力ディレクトリのパス \\\n  -s 音声ライブラリのID \\\n  -t タイトル \\\n  -d 概要 \\\n  -w ページ:待ち時間\n</code></pre>\n</section>\n","<section id=\"8\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>使い方3: Voideで処理する</h1>\n<ul>\n<li><code>-o</code>に指定したディレクトリにファイルが生成されます。</li>\n<li><code>-s</code>に使用するIDは<code>voide -h</code>で確認できます。（0〜35）</li>\n<li><code>-w</code>は読み上げが終わった後に待ちたい場合に使います。複数指定できます。</li>\n</ul>\n</section>\n","<section id=\"9\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>使い方3: Voideで処理する</h1>\n<p>このスライドは以下のようなコマンドで生成しています。</p>\n<pre><code></code></pre>\n</section>\n","<section id=\"10\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>完成・公開</h1>\n<p>これで完成です。</p>\n<p>公開したい場合は<code>-o</code>に指定したディレクトリの中身をそのままGitHub PagesなどでホスティングすればOKです。</p>\n</section>\n","<section id=\"11\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>ライセンスに注意</h1>\n<p>VOICEVOXはとても緩いライセンスでありがたいのですが、<br />\n一部注意が必要な音声ライブラリもあります。</p>\n<p>スライドを公開する前に必ず確認しましょう。</p>\n<p><a href=\"https://voicevox.hiroshiba.jp/\">https://voicevox.hiroshiba.jp/</a></p>\n</section>\n","<section id=\"12\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>よいスライドライフを</h1>\n<p>「Kawaii」スライドは作れる <img class=\"emoji\" draggable=\"false\" alt=\"💪\" src=\"https://twemoji.maxcdn.com/v/14.0.2/svg/1f4aa.svg\" data-marp-twemoji=\"\"/></p>\n</section>\n"],
+  ],
+};
+</script>
+
+</head>
+
+<body class="h-100">
+
+<div class="h-100 d-flex flex-column">
+  <div class="flex-fill slide-container marpit">
+    <section class="w-auto h-100"></section>
+  </div>
+  <div class="d-flex align-items-strech bg-dark text-white">
+    <div class="flex-fill align-self-center px-3 caption-container"></div>
+    <div class="d-flex align-items-end"">
+      <span class="p-2 m-1 page-container text-nowrap"></span>
+      <button class="btn btn-lg btn-dark invert-button">
+        <i class="bi-moon-fill active"></i>
+        <i class="bi-moon inactive d-none"></i>
+      </button>
+      <button class="btn btn-lg btn-dark caption-button">
+        <i class="bi-badge-cc-fill active"></i>
+        <i class="bi-badge-cc inactive d-none"></i>
+      </button>
+      <button class="btn btn-lg btn-dark mute-button">
+        <i class="bi-volume-mute-fill active"></i>
+        <i class="bi-volume-up-fill inactive d-none"></i>
+      </button>
+      <button class="btn btn-lg btn-dark autoplay-button">
+        <i class="bi-stop-fill active"></i>
+        <i class="bi-play-fill inactive d-none"></i>
+      </button>
+      <button class="btn btn-lg btn-dark back-button">
+        <i class="bi-chevron-left"></i>
+      </button>
+      <button class="btn btn-lg btn-dark forward-button">
+        <i class="bi-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+  crossorigin="anonymous"
+></script>
+<script src="voide.js"></script>
+
+</body>
+
+</html>
