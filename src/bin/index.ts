@@ -1,58 +1,32 @@
 #!/usr/bin/env node
 
-import yargs from 'yargs';
+import { program } from 'commander';
 
 import { Voide } from '..';
 
 (async () => {
   const voide = new Voide();
 
-  const argv = yargs(process.argv.slice(2))
-    .options({
-      input: {
-        type: 'string',
-        demandOption: true,
-        alias: 'i',
-        description: 'path/to/source.md',
-      },
-      output: {
-        type: 'string',
-        demandOption: true,
-        alias: 'o',
-        description: 'path/to/output.d/',
-      },
-      speaker: {
-        type: 'number',
-        demandOption: true,
-        alias: 's',
-        description: (await voide.speakerOptions())
-          .map((style) => style.label)
-          .join('\n'),
-      },
-      title: {
-        type: 'string',
-        demandOption: true,
-        alias: 't',
-      },
-      description: {
-        type: 'string',
-        alias: 'd',
-      },
-      wait: {
-        type: 'array',
-        alias: 'w',
-        description: 'page:seconds',
-      },
-    })
-    .parseSync();
+  program
+    .requiredOption('-i, --input <path>', 'path/to/source.md')
+    .requiredOption('-o, --output <path>', 'path/to/output.d/')
+    .requiredOption(
+      '-s, --speaker <id>',
+      (await voide.speakerOptions()).map((style) => style.label).join('\n')
+    )
+    .requiredOption('-t, --title <title>')
+    .option('-d, --description <description>')
+    .option('-w, --wait <page:seconds...>');
+  program.parse();
+  const options = program.opts();
 
   voide.generate(
-    argv.input,
-    argv.output,
-    argv.speaker,
-    argv.title,
-    argv.description ?? '',
-    (argv.wait ?? []).map((w: string | number) => ({
+    options.input,
+    options.output,
+    parseInt(options.speaker),
+    options.title,
+    options.description ?? '',
+    (options.wait ?? []).map((w: string | number) => ({
       page: parseInt(w.toString().split(':')[0]),
       seconds: parseInt(w.toString().split(':')[1]),
     }))

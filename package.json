@@ -4,8 +4,12 @@
   "description": "Generate HTML presentations from markdown with Marp and VOICEVOX",
   "main": "dist/index.js",
   "bin": "dist/bin/index.js",
-  "files": ["lib", "dist"],
+  "files": [
+    "lib",
+    "dist"
+  ],
   "scripts": {
+    "prepare": "npm run build",
     "build": "tsc src/**/*.ts --outDir dist",
     "typecheck": "tsc src/**/*.ts --noEmit",
     "openapi": "rm -rf src/openapi && openapi-generator-cli generate -g typescript-axios -o src/openapi -i http://localhost:50021/openapi.json",
@@ -28,7 +32,6 @@
     "@openapitools/openapi-generator-cli": "^2.5.2",
     "@types/ejs": "^3.1.1",
     "@types/fs-extra": "^9.0.13",
-    "@types/yargs": "^17.0.13",
     "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.3"
@@ -36,8 +39,8 @@
   "dependencies": {
     "@marp-team/marp-core": "^3.3.3",
     "axios": "^0.27.2",
+    "commander": "^9.4.1",
     "ejs": "^3.1.8",
-    "fs-extra": "^10.1.0",
-    "yargs": "^17.5.1"
+    "fs-extra": "^10.1.0"
   }
 }
