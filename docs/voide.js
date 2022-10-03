@@ -124,8 +124,8 @@ const updateUI = () => {
 };
 
 const handlers = {
-  invert: () => { },
-  caption: () => { },
+  invert: () => {},
+  caption: () => {},
   mute: () => {
     if (state.mute) {
       setState('autoplay', false);

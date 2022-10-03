@@ -58,7 +58,7 @@ Markdownでスライドを作り、それを自分の代わりにVOICEVOXに発�
 
 VS Codeの拡張やコマンドラインツールがあるので、好きな方法で作成します。
 
-<a href="https://marp.app/#get-started" target="_blank" rel="noopener" class="text-white">https://marp.app/#get-started</a>
+<a href="https://marp.app/#get-started" target="_blank" rel="noopener">https://marp.app/#get-started</a>
 
 <!--
 まずは一番大事なスライドの中身ですが、これはマープというツールに任せているので、これに従ってマークダウンを書けばOKです。
@@ -118,7 +118,7 @@ $ npx voide \
 
 - `-o`に指定したディレクトリにファイルが生成されます。
 - `-s`に使用するIDは`voide -h`で確認できます。（0〜35）
-- `-w`は読み上げが終わった後に待ちたい場合に使います。複数指定できます。
+- `-w`は読み上げが終わった後に待ちたい場合に使います。複数指定できます。「ページ:秒」の形式で指定します。
 
 <!--
 主なオプションはこちらです。
@@ -167,7 +167,7 @@ VOICEVOXはとても緩いライセンスでありがたいのですが、
 
 スライドを公開する前に必ず確認しましょう。
 
-<a href="https://voicevox.hiroshiba.jp/" target="_blank" rel="noopener" class="text-white">https://voicevox.hiroshiba.jp/</a>
+<a href="https://voicevox.hiroshiba.jp/" target="_blank" rel="noopener">https://voicevox.hiroshiba.jp/</a>
 
 <!--
 VOICEVOXのライセンスは音声ライブラリごとに異なるので、各自確認してください。

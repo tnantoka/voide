@@ -8,7 +8,7 @@ import { ResponseType } from 'axios';
 import { SpeakerOption, WaitOption } from './types';
 import { apiClient } from './api_client';
 
-const marp = new Marp({ inlineSVG: false, script: false });
+const marp = new Marp({ inlineSVG: false, script: false, html: true });
 
 export class Renderer {
   input: string;
