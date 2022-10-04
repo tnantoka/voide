@@ -96,7 +96,7 @@ VS Codeの拡張やコマンドラインツールがあるので、好きな方�
 # 使い方3: Voideで処理する
 
 markdownファイルをVoideに渡します。
-**事前にVOICEVOXを起動しておく必要があります。**
+Node(npm)が必要です。また、**事前にVOICEVOXを起動しておく必要があります。**
 
 ```
 $ npx voide \
@@ -132,7 +132,7 @@ wがわかりづらいですが、読み上げた後、スライドがすぐ切�
 このスライドは以下のようなコマンドで生成しています。
 
 ```
-$ voide \
+$ npx voide \
   -i examples/docs.md \
   -o docs \
   -s 0 \
