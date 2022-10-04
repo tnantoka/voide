@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "npm run build",
+    "prepack": "npm run build",
     "build": "tsc src/**/*.ts --outDir dist",
     "typecheck": "tsc src/**/*.ts --noEmit",
     "openapi": "rm -rf src/openapi && openapi-generator-cli generate -g typescript-axios -o src/openapi -i http://localhost:50021/openapi.json",
