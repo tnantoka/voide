@@ -1,15 +1,17 @@
 # Voide
 
-Generate HTML presentations from markdown with [Marp](https://marp.app/) and [VOICEVOX](https://voicevox.hiroshiba.jp/)
+[Marp](https://marp.app/)と[VOICEVOX](https://voicevox.hiroshiba.jp/)を使って音声付きスライドを作るツール
 
-日本語: <https://tnantoka.github.io/voide>
+デモ: <https://tnantoka.github.io/voide>
 
-## Requirements
+## 必要なもの
 
 - Node
 - VOICEVOX
 
-## Usage
+## 使い方
+
+事前にVOICEVOXを起動する必要があります。
 
 ```
 $ npx voide -h
@@ -60,22 +62,22 @@ Options:
   -h, --help                       display help for command
 ```
 
-## Development
+## 開発
 
 ```
-# Run VOICEVOX
+# VOICEVOXの起動
 $ ~/path/to/VOICEVOX.app/Contents/MacOS/run
-# or open VOICEVOX.app
-# or docker compose up
+# または open VOICEVOX.app
+# または docker compose up # Dockerにかなりのリソースを割り当てないと遅いと思います
 
 $ npm i
 $ npm run hello
 ```
 
-## License
+## ライセンス
 
 MIT
 
-## Author
+## 作者
 
 [@tnantoka](https://twitter.com/tnantoka)
