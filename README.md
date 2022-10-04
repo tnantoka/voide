@@ -64,6 +64,12 @@ Options:
 
 ## 開発
 
+### 方針
+
+MarkdownファイルはそのままMarpで処理できるようにしたいので、カスタマイズしない。コマンドラインオプションで何とかする。
+
+### 手順
+
 ```
 # VOICEVOXの起動
 $ ~/path/to/VOICEVOX.app/Contents/MacOS/run
