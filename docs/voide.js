@@ -10,7 +10,7 @@ const refs = {
 };
 
 const containers = {
-  slide: document.querySelector('.slide-container > section'),
+  slide: document.querySelector('.slide-container'),
   caption: document.querySelector('.caption-container'),
   page: document.querySelector('.page-container'),
 };
