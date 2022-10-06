@@ -61,7 +61,7 @@ export class Renderer {
         title: this.title,
         description: this.description,
         copyright,
-        html,
+        sections: this.sections(html),
         css,
         comments,
       }),
@@ -116,5 +116,17 @@ export class Renderer {
         process.stdout.write('*');
       })
     );
+  }
+
+  sections(html: string[]) {
+    return [
+      html[0]
+        .replace('"1"', '"0"')
+        .replace(
+          /(<section[^>]+>).*(<\/section.+)/s,
+          `$1<h1>${this.title}</h1><p>${this.description}</p>$2`
+        ),
+      ...html,
+    ];
   }
 }

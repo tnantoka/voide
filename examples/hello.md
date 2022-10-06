@@ -1,5 +1,6 @@
 ---
 theme: gaia
+class: lead
 ---
 
 # Slide 1

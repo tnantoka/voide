@@ -80,11 +80,7 @@ const props = {
 ],
   ],
   sections: [
-    `<section id="0">
-      <h1>Voide</h1>
-      <p>&#34;Kawaii&#34; Slide Generator</p>
-    </section>`,
-    ...[
+  "<section id=\"0\" data-theme=\"gaia\" style=\"--theme:gaia;\"><h1>Voide</h1><p>\"Kawaii\" Slide Generator</p></section>\n",
   "<section id=\"1\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>これは何？</h1>\n<p>Markdownでスライドを作り、それを自分の代わりにVOICEVOXに発表してもらおうというツールです。</p>\n</section>\n",
   "<section id=\"2\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>モチベーション</h1>\n<ul>\n<li>自分の声を聞きたくない</li>\n<li>「撮り直し」という非人道的な作業から人類を解放する（？）</li>\n</ul>\n</section>\n",
   "<section id=\"3\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>どんなスライドが作れる？</h1>\n<p>今見ているこのスライドがサンプルです。</p>\n</section>\n",
@@ -98,7 +94,6 @@ const props = {
   "<section id=\"11\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>ライセンスに注意</h1>\n<p>VOICEVOXはとても緩いライセンスでありがたいのですが、<br />\n一部注意が必要な音声ライブラリもあります。</p>\n<p>スライドを公開する前に必ず確認しましょう。</p>\n<p><a href=\"https://voicevox.hiroshiba.jp/\" target=\"_blank\" rel=\"noopener\">https://voicevox.hiroshiba.jp/</a></p>\n</section>\n",
   "<section id=\"12\" data-theme=\"gaia\" style=\"--theme:gaia;\">\n<h1>よいスライドライフを</h1>\n<p>Kawaiiスライドは作れる <img class=\"emoji\" draggable=\"false\" alt=\"💪\" src=\"https://twemoji.maxcdn.com/v/14.0.2/svg/1f4aa.svg\" data-marp-twemoji=\"\"/></p>\n</section>\n"
 ],
-  ],
 };
 </script>
 
@@ -108,7 +103,7 @@ const props = {
 
 <div class="h-100 d-flex flex-column">
   <div class="flex-fill slide-container marpit"></div>
-  <div class="d-flex align-items-strech bg-dark text-white">
+  <div class="d-flex align-items-strech bg-dark text-white position-absolute bottom-0 w-100">
     <div class="flex-fill align-self-center px-3 caption-container"></div>
     <div class="d-flex align-items-end"">
       <span class="p-2 m-1 page-container text-nowrap"></span>
