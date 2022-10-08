@@ -3,7 +3,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as opentype from 'opentype.js';
-import sharp from 'sharp';
+const sharp = require('sharp');
 
 const font = opentype.loadSync(path.join(__dirname, '../lib/fonts/NotoSansJP-Regular.otf'));
 const width = 1200;
