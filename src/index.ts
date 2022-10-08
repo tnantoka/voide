@@ -1,6 +1,8 @@
 import { SpeakerOption, WaitOption } from './types';
 import { Renderer } from './renderer';
+import { OGP } from './ogp';
 import { apiClient } from './api_client';
+import * as fs from 'fs';
 
 export class Voide {
   async speakerOptions(): Promise<SpeakerOption[]> {
@@ -27,12 +29,14 @@ export class Voide {
     speaker: number,
     title: string,
     description: string,
-    wait: WaitOption[]
+    wait: WaitOption[],
+    url: string
   ) {
     const options = await this.speakerOptions();
     const option = options.find((o) => o.id === speaker)!;
 
-    new Renderer(input, output, option, title, description, wait).render();
+    new Renderer(input, output, option, title, description, wait, url).render();
+    new OGP(output, title).generate();
   }
 
   async copyright(uuid: string) {

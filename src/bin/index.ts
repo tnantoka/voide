@@ -16,7 +16,8 @@ import { Voide } from '..';
     )
     .requiredOption('-t, --title <title>')
     .option('-d, --description <description>')
-    .option('-w, --wait <page:seconds...>');
+    .option('-w, --wait <page:seconds...>')
+    .option('-u, --url <url>');
   program.parse();
   const options = program.opts();
 
@@ -29,6 +30,7 @@ import { Voide } from '..';
     (options.wait ?? []).map((w: string | number) => ({
       page: parseInt(w.toString().split(':')[0]),
       seconds: parseInt(w.toString().split(':')[1]),
-    }))
+    })),
+    options.url ?? ''
   );
 })();

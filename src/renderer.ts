@@ -8,8 +8,6 @@ import { ResponseType } from 'axios';
 import { SpeakerOption, WaitOption } from './types';
 import { apiClient } from './api_client';
 
-const marp = new Marp({ inlineSVG: false, script: false, html: true });
-
 export class Renderer {
   input: string;
   output: string;
@@ -17,6 +15,7 @@ export class Renderer {
   title: string;
   description: string;
   wait: WaitOption[];
+  url: string;
 
   constructor(
     input: string,
@@ -24,7 +23,8 @@ export class Renderer {
     speakerOption: SpeakerOption,
     title: string,
     description: string,
-    wait: WaitOption[]
+    wait: WaitOption[],
+    url: string
   ) {
     this.input = input;
     this.output = output;
@@ -32,11 +32,16 @@ export class Renderer {
     this.title = title;
     this.description = description;
     this.wait = wait;
+    this.url = url;
   }
 
   async render() {
     const markdown = fs.readFileSync(this.input, 'utf8');
-    const { html, css, comments } = marp.render(markdown, {
+    const { html, css, comments } = new Marp({
+      inlineSVG: false,
+      script: false,
+      html: true,
+    }).render(markdown, {
       htmlAsArray: true,
     });
 
@@ -64,6 +69,7 @@ export class Renderer {
         sections: this.sections(html),
         css,
         comments,
+        url: this.url
       }),
       'utf8'
     );
