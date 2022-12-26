@@ -1,6 +1,6 @@
 {
   "name": "voide",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Generate HTML presentations from markdown with Marp and VOICEVOX",
   "main": "dist/index.js",
   "bin": "dist/bin/index.js",
@@ -39,7 +39,7 @@
     "typescript": "^4.8.3"
   },
   "dependencies": {
-    "@marp-team/marp-core": "^3.3.3",
+    "@marp-team/marp-core": "^3.4.1",
     "axios": "^0.27.2",
     "commander": "^9.4.1",
     "ejs": "^3.1.8",
